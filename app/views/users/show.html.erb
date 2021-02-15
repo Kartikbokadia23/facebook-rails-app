@@ -85,7 +85,7 @@
     <% end %>
     <% if friends.include?(@user) %>
 
-    <%= button_to 'Forget this fool', friendship_path(user), method: 'delete', class: "stop-btn" %>
+    <%= button_to 'Forget this fool', friendship_path(@user), method: 'delete', class: "stop-btn" %>
     <% elsif sent_requests.include?(@user) %>
     <% if %> 
         <p>Friend request sent. Not looking too good, huh bud?</p>

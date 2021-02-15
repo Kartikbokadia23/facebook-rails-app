@@ -4,13 +4,13 @@ class FriendRequest < ApplicationRecord
   
     #validates :requestee, uniqueness: { scope: :requester }
   
-    def self.accept
+    def accept
       requestee.friends << requester
       requester.friends << requestee
       self.destroy
     end
   
-    def self.decline
+    def decline
       self.destroy
     end
 end

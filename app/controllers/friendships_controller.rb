@@ -1,7 +1,7 @@
 class FriendshipsController < ApplicationController
     def create
-      @friend_request = FriendRequest.find_by(id: params[:friend_request])
-      @friend_request.accept
+      friend_request = FriendRequest.find_by(id: params[:friend_request])
+      friend_request.accept
       redirect_to request.referrer
     end
   
