@@ -1,0 +1,8 @@
+<div class="field form-group mb-4 d-flex flex-column position-relative mb-5 new-post">
+  <%= form_for :post, url: new_post_path(current_user.id)do |f| %>
+    <%= f.text_area :body, placeholder: "What is so important?", class: "form-control" %><br /> 
+    <div class="d-flex justify-content-end">
+    <%= f.submit 'Share with the world', class: "go-btn" %>
+    </div>
+  <% end %>
+</div>

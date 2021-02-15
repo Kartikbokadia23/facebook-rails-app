@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-10 col-md-8 col-lg-5 col-xl-4 mt-4">
+    <% @users.each do |user| %>
+      <div class="d-flex align-items-center justify-content-between">
+        <%= link_to user.name, user_path(user.id), class: "name-link post-author overflow-wrap" %>
+        <% if user.friends.include?(user) %>
+        <%= link_to 'Forget this fool', friendship_path(user), method: 'delete', class: "stop-btn" %>
+        <% elsif sent_requests.include?(user) %>
+        
+            <p>Friend request sent. Not looking too good, huh bud?</p>
+        <% else %>
+            <p>Friend reqeust sent
+        <% end %>
+        <% if received_requests.include?(user) %>
+        <p>They wanna be your friend. Your call.</p>
+          <div class="d-flex">
+            <%= link_to 'Accept', friendships_path(friend_request: user), method: 'post', class: "go-btn mx-3" %>
+            <%= link_to 'Deny', friend_request_path(user.id), method: 'delete', class: "stop-btn" %>
+        </div>
+        <% elsif user != current_user %>
+        <%= button_to 'Send Request', friend_requests_path(user_id: user.id), method: 'post', class: "go-btn my-3" %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
