@@ -16,6 +16,7 @@
 
           <% if user_signed_in? %>
           <div class="ml-md-auto d-flex">
+          <h2>Odin Facebook</h2>&nbsp;&nbsp;
             <%= link_to 'Home', posts_path, class: "nav-link" %></li>
             <%= link_to 'Profile', user_path(current_user), class: "nav-link mx-1 mx-md-4" %></li>
             <%= link_to 'Sign Out', destroy_user_session_path, method: 'delete', class: "nav-link" %></li>

@@ -70,7 +70,7 @@
     <% if @user == current_user %>
     <h3>Friend requests:</h3>
     <% if friend_request_list.empty? %>
-        <p>Looks like no one wants to be your friend.</p>
+        <p>no friend request</p>
     <% else %>
         <% friend_request_list.each do |r| %>
         <div class="d-flex align-items-center">
@@ -88,9 +88,9 @@
     <%= button_to 'Forget this fool', friendship_path(@user), method: 'delete', class: "stop-btn" %>
     <% elsif sent_requests.include?(@user) %>
     <% if %> 
-        <p>Friend request sent. Not looking too good, huh bud?</p>
+        <p>Friend request sent</p>
     <% else %>
-        <p>Friend reqeust sent
+        <p>send friend request
     <% end %>
     <% elsif received_requests.include?(@user) %>
 
