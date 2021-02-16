@@ -22,5 +22,6 @@
     <%= f.submit "Log in" %>
   </div>
 <% end %>
-
+<%= link_to "Sign in with (unapathetic) Facebook", "/auth/facebook", method: 'post', id: "sign_in" %><br />
+                                                            
 <%= render "devise/shared/links" %>
